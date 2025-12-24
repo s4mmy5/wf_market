@@ -72790,6 +72790,13 @@
                 "relic",
                 "axi"
             ],
+            "bulkTradable": true,
+            "subtypes": [
+                "intact",
+                "exceptional",
+                "flawless",
+                "radiant"
+            ],
             "vaulted": false,
             "i18n": {
                 "en": {
@@ -72807,6 +72814,13 @@
                 "vanguard",
                 "relic",
                 "axi"
+            ],
+            "bulkTradable": true,
+            "subtypes": [
+                "intact",
+                "exceptional",
+                "flawless",
+                "radiant"
             ],
             "vaulted": false,
             "i18n": {
@@ -72826,6 +72840,13 @@
                 "relic",
                 "axi"
             ],
+            "bulkTradable": true,
+            "subtypes": [
+                "intact",
+                "exceptional",
+                "flawless",
+                "radiant"
+            ],
             "vaulted": false,
             "i18n": {
                 "en": {
@@ -72843,6 +72864,13 @@
                 "vanguard",
                 "relic",
                 "axi"
+            ],
+            "bulkTradable": true,
+            "subtypes": [
+                "intact",
+                "exceptional",
+                "flawless",
+                "radiant"
             ],
             "vaulted": false,
             "i18n": {
