@@ -7,6 +7,8 @@ from itertools import islice
 
 MAX_SETS_LIMIT = 100
 API_URL = "https://api.warframe.market/v2/"
+#FIXME: there's gotta be a better name for this
+SET_PART_PRICES_PATH = "./data/set_part_prices"
 
 # takes in item_slug, returns dict of top 5 orders (from users that were online in the past 7 days)
 def get_top_orders(slug:str):
@@ -48,17 +50,30 @@ def get_parts_price(set):
 
     return price
 
+<<<<<<< HEAD
 if __name__=="__main__":
+=======
+def get_set_part_price_comparisons():
+>>>>>>> a51ec80 (saved possible margins data, added visuals.)
     items = get_all_items()
     assert type(items) == list
     sets = [item for item in items if "set" in item["slug"]]
 
+<<<<<<< HEAD
     cnt = 0
     prices_arr = []
     # TODO: chose better names for prices and prices_arr
     for set in islice(sets, 0, len(sets)): # replace len(sets) with MAX_SETS_LIMIT
         cnt+=1
         print(f"COUNT/MAX: {cnt}/{MAX_SETS_LIMIT}")
+=======
+    # TODO: chose better names for prices and prices_arr
+    cnt = 0
+    prices_arr = []
+    for set in islice(sets, 0, len(sets)): # replace len(sets) with MAX_SETS_LIMIT
+        cnt+=1
+        print(f"COUNT/MAX: {cnt}/{len(sets)}")
+>>>>>>> a51ec80 (saved possible margins data, added visuals.)
 
         prices = {}
         prices["set_slug"] = set["slug"]
@@ -71,6 +86,7 @@ if __name__=="__main__":
 
         prices_arr.append(prices)
 
+<<<<<<< HEAD
     # save prices_arr
     with open("set_prices", "w") as file:
         json.dump(prices_arr, file)
@@ -82,3 +98,26 @@ if __name__=="__main__":
     # ind = np.arange(len(margin_arr))
     # plt.bar(ind, margin_arr)
     # plt.show()
+=======
+    return prices_arr
+
+def save_set_part_price_comparisons(save_path:str):
+    # save prices_arr
+    with open(SET_PART_PRICES_PATH, "w") as file:
+        return json.dump(get_set_part_price_comparisons, file)
+
+
+if __name__=="__main__":
+    # get set_part_prices data
+    prices_arr = []
+    with open(SET_PART_PRICES_PATH) as file:
+        prices_arr = json.load(file)
+
+    # graph price differences
+    margin_arr = [prices["parts_price"] - prices["set_price"] for prices in prices_arr]
+    slugs_arr = [prices["set_slug"] for prices in prices_arr]
+
+    plt.bar(slugs_arr, margin_arr)
+    plt.xticks(rotation=90)
+    plt.show()
+>>>>>>> a51ec80 (saved possible margins data, added visuals.)

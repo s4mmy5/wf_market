@@ -1,3 +1,4 @@
+look ma, I'm a quant! :stuck_out_tongue_closed_eyes:
 # wf_market
 A warframe market strategy finder. 
 
